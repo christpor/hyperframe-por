@@ -11,4 +11,4 @@ States: [ ] todo · [~] doing · [x] done (harness re-verifies) · [?] research 
 - [x] T5: Interactive prompt carousel and template showcase video grid | file: src/features/showcase/TemplateShowcase.tsx | verify: `bun test tests/showcase.test.ts`
 - [x] T6: Multi-platform OS download drawer with platform selection | file: src/features/download/DownloadDrawer.tsx | verify: `bun test tests/download.test.ts`
 - [x] T7: Integration build + full production compile | file: package.json | verify: `bun run build`
-- [ ] T8: Vercel deployment & verification | file: vercel.json | verify: `curl -sf -o /dev/null https://hyperframe-por.vercel.app`
+- [x] T8: Vercel deployment & verification | file: vercel.json | verify: `curl -sf -o /dev/null https://hyperframe-por.vercel.app`
