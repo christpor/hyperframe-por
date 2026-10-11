@@ -4,7 +4,7 @@ Goal: Integrate authentic HyperFrames brand fonts, browser tab favicon/SEO, visu
 States: [ ] todo · [~] doing · [x] done (harness re-verifies) · [?] research needed · [!] blocked (reason required)
 
 - [x] T0: Recon — verify font files and SVG assets on hyperframes.dev | file: .scratchpad/fonts_recon.md | verify: `test -f .scratchpad/fonts_recon.md`
-- [ ] T1: Ingest brand webfonts and declare @font-face rules | file: src/app/globals.css | verify: `bun test tests/fonts.test.ts`
+- [x] T1: Ingest brand webfonts and declare @font-face rules | file: src/app/globals.css | verify: `bun test tests/fonts.test.ts`
 - [ ] T2: Browser tab favicons, logo SVGs, and metadata SEO | file: src/app/layout.tsx | verify: `bun test tests/seo.test.ts`
 - [ ] T3: Align Hero headline typography and button hierarchy | file: src/features/hero/StudioHero.tsx | verify: `bun test tests/hero_layout.test.ts`
 - [ ] T4: Integration build + full production compile | file: package.json | verify: `bun run build`
