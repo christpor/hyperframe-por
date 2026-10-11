@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Download, Play, Pause, Volume2, VolumeX, Maximize2, ExternalLink } from "lucide-react";
+import { Download, Play, Pause, Volume2, VolumeX, Maximize2 } from "lucide-react";
 import { STUDIO_DATA } from "@/data/studioData";
 import { calculateHeroScale } from "@/lib/motion";
 
@@ -99,38 +99,28 @@ export function StudioHero({ onOpenDownload }: StudioHeroProps) {
       {/* Top Hero Heading Row */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
         <div className="lg:col-span-7">
-          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-[#131109] leading-[1.05]">
-            <span>{STUDIO_DATA.brand}</span>
-            <br />
-            <span className="font-light">{STUDIO_DATA.brandLight}</span>
+          <h1 className="text-6xl sm:text-8xl tracking-[-0.035em] text-[#131109] leading-[0.95] select-none">
+            <span className="font-bold block">{STUDIO_DATA.brand}</span>
+            <span className="font-light block mt-1">{STUDIO_DATA.brandLight}</span>
           </h1>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div className="mt-8 flex items-center">
             <button
               onClick={onOpenDownload}
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#131109] text-[#f4f1ea] font-medium text-sm hover:opacity-90 active:scale-95 transition-all shadow-md"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#131109] text-[#f4f1ea] font-medium text-sm hover:opacity-90 active:scale-95 transition-all shadow-md font-['Studio_TT_Norms']"
             >
               <Download className="w-4 h-4" />
               <span>Download for Linux</span>
             </button>
-            <a
-              href={STUDIO_DATA.links.docs}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-5 py-3.5 rounded-full border border-black/10 text-[#131109] font-medium text-sm hover:bg-black/5 transition-all"
-            >
-              <span>Explore Docs</span>
-              <ExternalLink className="w-3.5 h-3.5 opacity-60" />
-            </a>
           </div>
 
-          <p className="mt-4 text-sm text-[#131109]/60">
+          <p className="mt-4 text-sm text-[#131109]/60 font-['Studio_TT_Norms']">
             {STUDIO_DATA.subheadline}
           </p>
         </div>
 
-        <div className="lg:col-span-5 lg:pt-2">
-          <p className="text-2xl sm:text-3xl text-[#131109]/80 font-light leading-snug">
+        <div className="lg:col-span-5 lg:pt-4 flex lg:justify-end">
+          <p className="text-3xl sm:text-4xl text-[#131109] font-normal leading-[1.2] max-w-sm font-['Studio_TT_Norms'] tracking-tight">
             {STUDIO_DATA.headline}
           </p>
         </div>
@@ -170,7 +160,20 @@ export function StudioHero({ onOpenDownload }: StudioHeroProps) {
               className="w-full h-full object-cover"
             />
 
-            {/* Video Controls Bar */}
+            {/* Top-Right Sound indicator badge matching live site */}
+            <button
+              onClick={toggleMute}
+              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/60 hover:bg-black/80 backdrop-blur-md text-white/90 border border-white/10 transition-colors"
+              aria-label={isMuted ? "Unmute" : "Mute"}
+            >
+              {isMuted ? (
+                <VolumeX className="w-4 h-4" />
+              ) : (
+                <Volume2 className="w-4 h-4" />
+              )}
+            </button>
+
+            {/* Bottom Video Controls Bar */}
             <div className="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between px-4 py-2.5 rounded-2xl bg-black/60 backdrop-blur-md border border-white/10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200">
               <div className="flex items-center gap-3">
                 <button
@@ -182,17 +185,6 @@ export function StudioHero({ onOpenDownload }: StudioHeroProps) {
                     <Pause className="w-4 h-4" />
                   ) : (
                     <Play className="w-4 h-4" />
-                  )}
-                </button>
-                <button
-                  onClick={toggleMute}
-                  className="p-1.5 rounded-full hover:bg-white/20 transition-colors"
-                  aria-label={isMuted ? "Unmute" : "Mute"}
-                >
-                  {isMuted ? (
-                    <VolumeX className="w-4 h-4" />
-                  ) : (
-                    <Volume2 className="w-4 h-4" />
                   )}
                 </button>
                 <div className="text-xs font-mono text-white/70">
