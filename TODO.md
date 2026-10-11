@@ -8,5 +8,5 @@ States: [ ] todo · [~] doing · [x] done (harness re-verifies) · [?] research 
 - [x] T2: Browser tab favicons, logo SVGs, and metadata SEO | file: src/app/layout.tsx | verify: `bun test tests/seo.test.ts`
 - [x] T3: Align Hero headline typography and button hierarchy | file: src/features/hero/StudioHero.tsx | verify: `bun test tests/hero_layout.test.ts`
 - [x] T4: Integration build + full production compile | file: package.json | verify: `bun run build`
-- [ ] T5: Production redeployment & live asset verification | file: vercel.json | verify: `curl -sf -o /dev/null https://hyperframe-por.vercel.app/fonts/ABCSolarDisplay-Bold.woff2`
+- [x] T5: Production redeployment & live asset verification | file: vercel.json | verify: `curl -sf -o /dev/null https://hyperframe-por.vercel.app/fonts/ABCSolarDisplay-Bold.woff2`
 - [ ] T6: Push clean repository to GitHub christpor/hyperframe-por | file: - | verify: `gh repo view christpor/hyperframe-por --json name`
