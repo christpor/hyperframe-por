@@ -9,6 +9,6 @@ States: [ ] todo · [~] doing · [x] done (harness re-verifies) · [?] research 
 - [x] T3: Kinetic scaling hero card with exact GSAP ScrollTrigger formula + Lenis | file: src/features/hero/StudioHero.tsx | verify: `bun test tests/hero.test.ts`
 - [x] T4: Open Source metrics bar with real numbers and copyable npx command | file: src/features/oss/OpenSourceStats.tsx | verify: `bun test tests/stats.test.ts`
 - [x] T5: Interactive prompt carousel and template showcase video grid | file: src/features/showcase/TemplateShowcase.tsx | verify: `bun test tests/showcase.test.ts`
-- [ ] T6: Multi-platform OS download drawer with platform selection | file: src/features/download/DownloadDrawer.tsx | verify: `bun test tests/download.test.ts`
+- [x] T6: Multi-platform OS download drawer with platform selection | file: src/features/download/DownloadDrawer.tsx | verify: `bun test tests/download.test.ts`
 - [ ] T7: Integration build + full production compile | file: package.json | verify: `bun run build`
 - [ ] T8: Vercel deployment & verification | file: vercel.json | verify: `curl -sf -o /dev/null https://hyperframe-por.vercel.app`
