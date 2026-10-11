@@ -1,10 +1,13 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { STUDIO_DATA } from "@/data/studioData";
 
-export function Navbar() {
+interface NavbarProps {
+  onOpenDownload?: () => void;
+}
+
+export function Navbar({ onOpenDownload }: NavbarProps) {
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-white/20 border-b border-[#131109]/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
